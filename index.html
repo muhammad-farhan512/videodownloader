@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Downloader | MP3 & MP4</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-theme">
+    <div class="theme-toggle">
+        <button id="theme-switcher">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+        </button>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-download"></i> Media Downloader</h1>
+            <p>Download videos and audio from popular platforms</p>
+        </div>
+        
+        <div class="downloader-card">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="mp4"><i class="fas fa-video"></i> MP4 Video</button>
+                <button class="tab-btn" data-tab="mp3"><i class="fas fa-music"></i> MP3 Audio</button>
+            </div>
+            
+            <div class="tab-content active" id="mp4">
+                <div class="input-group">
+                    <input type="text" id="video-url" placeholder="Paste video URL here (YouTube, Facebook, etc.)">
+                    <button id="fetch-video"><i class="fas fa-search"></i> Fetch</button>
+                </div>
+                
+                <div class="title-input" style="display: none;">
+                    <input type="text" id="video-title" placeholder="Custom download title (optional)">
+                </div>
+                
+                <div class="video-preview" id="video-preview">
+                    <div class="placeholder">
+                        <i class="fas fa-video"></i>
+                        <p>Video preview will appear here</p>
+                    </div>
+                </div>
+                
+                <div class="download-options" id="video-options">
+                    <h3>Download Options</h3>
+                    <div class="options-grid" id="video-formats">
+                        <div class="option-placeholder">
+                            <i class="fas fa-cloud-download-alt"></i>
+                            <p>Available formats will appear here after fetching</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="mp3">
+                <div class="input-group">
+                    <input type="text" id="audio-url" placeholder="Paste audio/video URL here">
+                    <button id="fetch-audio"><i class="fas fa-search"></i> Fetch</button>
+                </div>
+                
+                <div class="title-input" style="display: none;">
+                    <input type="text" id="audio-title" placeholder="Custom download title (optional)">
+                </div>
+                
+                <div class="audio-preview" id="audio-preview">
+                    <div class="placeholder">
+                        <i class="fas fa-music"></i>
+                        <p>Audio info will appear here</p>
+                    </div>
+                </div>
+                
+                <div class="download-options">
+                    <h3>Download Options</h3>
+                    <div class="options-grid" id="audio-formats">
+                        <div class="option-placeholder">
+                            <i class="fas fa-cloud-download-alt"></i>
+                            <p>Available formats will appear here after fetching</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="features">
+            <h2>Supported Platforms</h2>
+            <div class="platforms">
+                <div class="platform"><i class="fab fa-youtube"></i> YouTube</div>
+                <div class="platform"><i class="fab fa-facebook"></i> Facebook</div>
+                <div class="platform"><i class="fab fa-instagram"></i> Instagram</div>
+                <div class="platform"><i class="fab fa-twitter"></i> Twitter</div>
+                <div class="platform"><i class="fas fa-globe"></i> Other Sites</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="loading-modal" id="loading-modal">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p id="loading-text">Processing your request...</p>
+        </div>
+    </div>
+    
+    <div class="toast" id="toast"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
